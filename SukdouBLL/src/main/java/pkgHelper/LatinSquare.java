@@ -24,8 +24,8 @@ public class LatinSquare {
 	}
 
 	public boolean hasDuplicates(int[] arr) {
+		
 		boolean hasDuplicates = false;
-
 		if (arr == null)
 			return false;
 
@@ -40,5 +40,22 @@ public class LatinSquare {
 		}
 		return hasDuplicates;
 	}
+	public boolean doesElementExist(int[] arr, int iValue) {
+		
+		boolean doesElementExist = false;
+		for(int i: arr) {
+			
+			if(i==iValue) {
+				doesElementExist = true;
+				break;
+			}
+		}
+		
+		return doesElementExist;
+		
+		
+		
+	}
+	
 }
 

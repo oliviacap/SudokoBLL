@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author livcap
- *
- */
-package pkgGame;
