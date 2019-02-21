@@ -64,6 +64,16 @@ public class LatinSquareTest {
 		assertFalse(lq.doesElementExist(arr, iValue));
 
 	}
+	@Test
+	public void doesElementExist_test3() {
+
+		int[] arr = null;
+		int iValue = 0;
+		LatinSquare lq = new LatinSquare();
+
+		assertFalse(lq.doesElementExist(arr,iValue));
+
+	}
 
 	}
 	

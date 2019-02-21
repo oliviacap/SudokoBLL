@@ -43,6 +43,10 @@ public class LatinSquare {
 	public boolean doesElementExist(int[] arr, int iValue) {
 		
 		boolean doesElementExist = false;
+		
+		if (arr == null)
+			return false;
+		
 		for(int i: arr) {
 			
 			if(i==iValue) {
