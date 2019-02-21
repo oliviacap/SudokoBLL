@@ -29,7 +29,7 @@ public class LatinSquare {
 		if (arr == null)
 			return false;
 
-		Arrays.sort(arr);
+		Arrays.sort(arr); 
 
 		for (int i = 0; i < arr.length - 1; i++) {
 			if (arr[i] == arr[i + 1]) {
