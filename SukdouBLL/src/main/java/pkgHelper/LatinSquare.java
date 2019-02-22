@@ -18,15 +18,15 @@ public class LatinSquare
 		this.LatinSquare = puzzle;
 	}
 
-//	public int[][] getLatinSquare() 
-//	{
-//		return LatinSquare;
-//	}
+	public int[][] getLatinSquare() 
+	{
+		return LatinSquare;
+	}
 
-//	public void setLatinSquare(int[][] latinSquare)
-//	{
-//		LatinSquare = latinSquare;
-//	}
+	public void setLatinSquare(int[][] latinSquare)
+	{
+		LatinSquare = latinSquare;
+	}
 
 	public boolean hasDuplicates(int[] arr)
 	{
@@ -41,22 +41,20 @@ public class LatinSquare
 		return false;
 
 	}
-	public static boolean doesElementExist(int[] arr)
+	public static boolean doesElementExist(int[] arr, int iValue)
 	{
+		boolean doesElementExist = false;
 		
 		if (arr == null)
 			return false;
 		
 		for(int i: arr) {
-			
 			if(i == iValue) 
 			{
 				return true;
 			} 
 		}
-		
 		return false;
-		
 	}
 	
 	/**

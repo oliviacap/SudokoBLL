@@ -11,20 +11,19 @@ public class LatinSquareTest {
 
 		int[] arr = {1,2,3,4,5};
 		LatinSquare lq = new LatinSquare();
-
+		//boolean bExpected=false;
 		assertFalse(lq.hasDuplicates(arr));
-
+		//assertEquals(bExpected, LatinSquare.hasDuplicates(arr));
 	}
-
 	@Test
 	public void hasDuplicates_test2() {
 
 		int[] arr = {1,1,3,4,5};
-		boolean bExpected = false;
-		
-
+		LatinSquare lq = new LatinSquare();
+		//boolean bExpected=false;
+		assertTrue(lq.hasDuplicates(arr));
+		//assertEquals(bExpected, LatinSquare.hasDuplicates(arr));
 	}
-	
 	public void hasDuplicates_test3() {
 
 		int[] arr = {1,3,4,5,1};
@@ -33,20 +32,20 @@ public class LatinSquareTest {
 		assertTrue(lq.hasDuplicates(arr));
 
 	}
-	@Test
-	public void hasDuplicates_test4() {
-
-		int[] arr = null;
-		//LatinSquare lq = new LatinSquare();
-
-		boolean bExpectedCondition = false;
-		boolean bActualCondition;
-		
-		bActualCondition = LatinSquare.hasDuplicates(arr);
-		
-		assertFalse(lq.hasDuplicates(arr));
-
-	}
+//	@Test
+//	public void hasDuplicates_test4() {
+//
+//		int[] arr = null;
+//		//LatinSquare lq = new LatinSquare();
+//
+//		boolean bExpectedCondition = false;
+//		boolean bActualCondition;
+//		
+//		bActualCondition = LatinSquare.hasDuplicates(arr);
+//		
+//		assertFalse(lq.hasDuplicates(arr));
+//
+//	}
 
 	@Test
 	public void doesElementExist_test1() {
@@ -70,7 +69,6 @@ public class LatinSquareTest {
 
 		int[] arr = {1,2,3,4,5};
 		int iValue = 99;
-		//LatinSquare lq = new LatinSquare();
 
 		boolean bExpectedCondition = false;
 		boolean bActualCondition;
@@ -79,25 +77,8 @@ public class LatinSquareTest {
 		
 		assertEquals(bExpectedCondition,bActualCondition);
 
-		//assertFalse(lq.doesElementExist(arr, iValue));
-
 	}
-	@Test
-	public void doesElementExist_test3() {
-
-		int[] arr = null;
-		int iValue = 0;
-		//LatinSquare lq = new LatinSquare();
-
-		boolean bExpectedCondition = false;
-		boolean bActualCondition;
 		
-		bActualCondition = LatinSquare.doesElementExist(arr, iValue);
-		
-		//assertFalse(lq.doesElementExist(arr,iValue));
-
-	}
-	
 	@Test
 	public void hasAllValues_Test1()
 	{
