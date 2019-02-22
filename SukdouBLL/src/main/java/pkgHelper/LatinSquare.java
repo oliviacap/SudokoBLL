@@ -12,58 +12,50 @@ public class LatinSquare
 
 	}
 
-	public LatinSquare(int[][] latinSquare) 
+	public LatinSquare(int[][] puzzle) 
 	{
 		super();
-		LatinSquare = latinSquare;
+		this.LatinSquare = puzzle;
 	}
 
-	public int[][] getLatinSquare() 
-	{
-		return LatinSquare;
-	}
+//	public int[][] getLatinSquare() 
+//	{
+//		return LatinSquare;
+//	}
 
-	public void setLatinSquare(int[][] latinSquare)
-	{
-		LatinSquare = latinSquare;
-	}
+//	public void setLatinSquare(int[][] latinSquare)
+//	{
+//		LatinSquare = latinSquare;
+//	}
 
 	public boolean hasDuplicates(int[] arr)
 	{
-		
-		boolean hasDuplicates = false;
-		if (arr == null)
-			return false;
-
-		Arrays.sort(arr); 
-
-		for (int i = 0; i < arr.length - 1; i++) 
+		Arrays.sort(arr);
+		for (int i = 0; i<arr.length-1; i++)
 		{
-			if (arr[i] == arr[i + 1]) {
-				hasDuplicates = true;
-				break;
+			if (arr[i] == arr[i+1])
+			{
+				return true;
 			}
-
 		}
-		return hasDuplicates;
+		return false;
+
 	}
-	public boolean doesElementExist(int[] arr, int iValue)
+	public static boolean doesElementExist(int[] arr)
 	{
-		
-		boolean doesElementExist = false;
 		
 		if (arr == null)
 			return false;
 		
 		for(int i: arr) {
 			
-			if(i==iValue) {
-				doesElementExist = true;
-				break;
-			}
+			if(i == iValue) 
+			{
+				return true;
+			} 
 		}
 		
-		return doesElementExist;
+		return false;
 		
 	}
 	
@@ -81,9 +73,24 @@ public class LatinSquare
 	 * @return
 	 */
 	
-	public boolean hasAllValues(int[] arr1, int[] arr2)
+	public static boolean hasAllValues(int[] arr1, int[] arr2)
 	{
-		return false;
+		boolean hasAllValues = true;
+		for (int j = 0; j < arr2.length; j++)
+		{ 
+			boolean bFound = false;
+			
+			for (int i =0; i<arr1.length; i++) {
+				if (arr1[i] == arr2[j]){
+					bFound = true;
+					break;
+				}
+			}
+			if (bFound==false) {
+				hasAllValues=false;
+			}
+		}
+		return hasAllValues;
 	}
 	
 	/**
@@ -128,11 +135,21 @@ public class LatinSquare
 	 * containsZero - will return 'true' if any value in the LatinSquare is zero.
 	 * @return
 	 */
-	public boolean containsZero()
+	public boolean ContainsZero()
 	{
+		for (int iRow = 0; iRow < this.LatinSquare.length; iRow++)
+		{
+			for (int iCol = 0; iCol < this.LatinSquare.length; iCol++)
+			{
+				if (this.LatinSquare[iRow][iCol]==0 )
+				{
+					return true;
+				}
+					
+			}
+		}
 		return false;
 	}
-	
-	
 }
+	
 
