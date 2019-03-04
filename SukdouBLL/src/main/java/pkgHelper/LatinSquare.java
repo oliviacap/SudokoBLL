@@ -9,7 +9,7 @@ public class LatinSquare
 
 	public LatinSquare() 
 	{
-
+		super();
 	}
 
 	public LatinSquare(int[][] puzzle) 
@@ -146,21 +146,20 @@ public class LatinSquare
 		for (int i = 0; i < LatinSquare.length; i++) {
 
 		column_array[i] = LatinSquare[i][Col];
+		
 		}
+		
 		return column_array;
+		
 		}
 
-		/**
+	/**
 
-		 * Return a one dimensional array of a row from Latin square
-
-		 * 
-
-		 * @param Row
-
-		 * @return
-
-		 */
+	 * Return a one dimensional array of a row from Latin square
+	 * 
+	 *  @param Row
+	 *  @return
+     */
 
 		public int[] getRow(int Row)
 		{
@@ -197,7 +196,7 @@ public class LatinSquare
 			break;
 		}
 		for(int k = 0; k<LatinSquare.length; k++) {
-			int puzzle[] = LatinSquare.getRow(k);
+			int puzzle[] = LatinSquare\.getRow(k);
 			if(hasDuplicates(puzzle)) {
 				isLatinSquare=false;
 				break;
