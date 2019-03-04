@@ -30,20 +30,25 @@ public class LatinSquare
 
 	public boolean hasDuplicates(int[] arr)
 	{
-		Arrays.sort(arr);
-		for (int i = 0; i<arr.length-1; i++)
+		boolean hasDuplicates = false;
+		int[] sortedArray = Arrays.copyOf(arr, arr.length);
+		
+		Arrays.sort(sortedArray);
+		
+		for (int i = 0; i<sortedArray.length-1; i++)
 		{
-			if (arr[i] == arr[i+1])
+			if (sortedArray[i] == sortedArray[i+1]) 
 			{
-				return true;
+				hasDuplicates = true;
+				break;
 			}
 		}
-		return false;
+		return hasDuplicates;
 
 	}
 	public static boolean doesElementExist(int[] arr, int iValue)
 	{
-		boolean doesElementExist = false;
+		//boolean doesElementExist = false;
 		
 		if (arr == null)
 			return false;
@@ -96,22 +101,36 @@ public class LatinSquare
 	 * @param Col
 	 * @return
 	 */
-	public int[] getColumn(int Col)
-	{
-		return null;
-	}
-	
-	/** 
-	 * Return a one dimensional array of a row from Latin square
-	 * 
-	 * @param Row
-	 * @return
-	 */
-	public int[] getRow(int Row)
-	{
-		
-		return null;
-	}
+	public int[] getColumn(int Col) {
+
+		int[] column_array = new int[LatinSquare.length];
+
+		for (int i = 0; i < LatinSquare.length; i++) {
+
+		column_array[i] = LatinSquare[i][Col];
+
+		}
+
+		return column_array;
+
+		}
+
+		/**
+
+		 * Return a one dimensional array of a row from Latin square
+
+		 * 
+
+		 * @param Row
+
+		 * @return
+
+		 */
+
+		public int[] getRow(int Row)
+		{
+		return LatinSquare[Row];
+		}
 	
 	/**
 	 * Return 'true' if...
@@ -124,11 +143,42 @@ public class LatinSquare
 	 * @return - true or false, see above
 	 */
 	
-	public boolean isLatinSquare() 
-	{
-		
-		return false;
+	public boolean isLatinSquare() {
+
+		boolean isLatinSquare = true;
+
+		for (int i = 1; i < LatinSquare.length; i++) {
+
+			if (!hasAllValues(getRow(0), getRow(i)))
+
+				isLatinSquare=false;
+			break;
+		}
+		for (int j = 1; j < LatinSquare.length; j++) {
+
+			if (!hasAllValues(getColumn(0), getColumn(j)))
+
+				isLatinSquare=false;
+			break;
+		}
+		for(int k = 0; k<LatinSquare.length; k++) {
+			int puzzle[] = LatinSquare.getRow(k);
+			if(hasDuplicates(puzzle)) {
+				isLatinSquare=false;
+				break;
+			}			
+			}
+		for(int k = 0; k<LatinSquare.length; k++) {
+			int puzzle[] = LatinSquare.getColumn(k);
+			if(hasDuplicates(puzzle)) {
+				isLatinSquare=false;
+				break;
+			}
+
+		return isLatinSquare;
+		}
 	}
+
 	/**
 	 * containsZero - will return 'true' if any value in the LatinSquare is zero.
 	 * @return
@@ -148,6 +198,7 @@ public class LatinSquare
 		}
 		return false;
 	}
+
 }
 	
 

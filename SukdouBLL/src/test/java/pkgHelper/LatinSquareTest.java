@@ -9,115 +9,107 @@ public class LatinSquareTest {
 	@Test
 	public void hasDuplicates_test1() {
 
-		int[] arr = {1,2,3,4,5};
+		int[] arr = { 1, 2, 3, 4, 5 };
 		LatinSquare lq = new LatinSquare();
-		//boolean bExpected=false;
+
 		assertFalse(lq.hasDuplicates(arr));
-		//assertEquals(bExpected, LatinSquare.hasDuplicates(arr));
+
 	}
+
 	@Test
 	public void hasDuplicates_test2() {
 
-		int[] arr = {1,1,3,4,5};
-		LatinSquare lq = new LatinSquare();
-		//boolean bExpected=false;
-		assertTrue(lq.hasDuplicates(arr));
-		//assertEquals(bExpected, LatinSquare.hasDuplicates(arr));
-	}
-	public void hasDuplicates_test3() {
-
-		int[] arr = {1,3,4,5,1};
+		int[] arr = { 1, 1, 3, 4, 5 };
 		LatinSquare lq = new LatinSquare();
 
 		assertTrue(lq.hasDuplicates(arr));
 
 	}
-//	@Test
-//	public void hasDuplicates_test4() {
-//
-//		int[] arr = null;
-//		//LatinSquare lq = new LatinSquare();
-//
-//		boolean bExpectedCondition = false;
-//		boolean bActualCondition;
-//		
-//		bActualCondition = LatinSquare.hasDuplicates(arr);
-//		
-//		assertFalse(lq.hasDuplicates(arr));
-//
-//	}
 
 	@Test
-	public void doesElementExist_test1() {
-
-		int[] arr = {1,2,3,4,5};
+	public void doesElementExist_Test1() {
+		int[] arr = { 1, 2, 3, 4, 5 };
 		int iValue = 3;
-		//LatinSquare lq = new LatinSquare();
-		
 		boolean bExpectedCondition = true;
 		boolean bActualCondition;
-		
-		bActualCondition = LatinSquare.doesElementExist(arr, iValue);
-		
-		assertEquals(bExpectedCondition,bActualCondition);
 
-		//assertTrue(lq.doesElementExist(arr, iValue));
+		bActualCondition = LatinSquare.doesElementExist(arr, iValue);
+
+		assertEquals(bExpectedCondition, bActualCondition);
 
 	}
-	@Test
-	public void doesElementExist_test2() {
 
-		int[] arr = {1,2,3,4,5};
+	@Test
+	public void doesElementExist_Test2() {
+		int[] arr = { 1, 2, 3, 4, 5 };
 		int iValue = 99;
+		LatinSquare lq = new LatinSquare();
 
-		boolean bExpectedCondition = false;
-		boolean bActualCondition;
-		
-		bActualCondition = LatinSquare.doesElementExist(arr, iValue);
-		
-		assertEquals(bExpectedCondition,bActualCondition);
+		assertFalse(lq.doesElementExist(arr, iValue));
 
 	}
-		
+
 	@Test
-	public void hasAllValues_Test1()
-	{
-		int[] arr1 = { 1,2,3,4};
-		int[] arr2 = {1,2};
+	public void hasAllValues_Test1() {
+		int[] arr1 = { 1, 2, 3, 4 };
+		int[] arr2 = { 1, 2 };
 		boolean bExpected = true;
 		boolean bActualValue = LatinSquare.hasAllValues(arr1, arr2);
-		
-		assertEquals(bExpected,bActualValue);
+
+		assertEquals(bExpected, bActualValue);
+
 	}
+
 	@Test
-	public void hasAllValues_Test2()
-	{
-		int[] arr1 =  {1,2,3,4};
-		int[] arr2 = {1,2,5};
+	public void hasAllValues_Test2() {
+		int[] arr1 = { 1, 2, 3, 4 };
+		int[] arr2 = { 1, 2, 5 };
 		boolean bExpected = false;
 		boolean bActualValue = LatinSquare.hasAllValues(arr1, arr2);
-		
-		assertEquals(bExpected,bActualValue);
+
+		assertEquals(bExpected, bActualValue);
+
 	}
+
 	@Test
-	public void ContainsZero_Test1()
-	{
-		int[][] puzzle = {{1,2,3}, {2,3,1},{3,1,2}};
+	public void ContiansZero_Test1() {
+
+		int[][] puzzle = { { 1, 2, 3 }, { 2, 3, 1 }, { 3, 1, 2 } };
 		LatinSquare ls = new LatinSquare(puzzle);
 		boolean bExpected = false;
 		boolean bActual = ls.ContainsZero();
-		
-		assertEquals(bExpected,bActual);
+
+		assertEquals(bExpected, bActual);
 	}
+
 	@Test
-	public void ContainsZero_Test2()
-	{
-		int[][] puzzle = {{1,0,3,}, {2,3,1},{3,1,2}};
+	public void ContiansZero_Test2() {
+
+		int[][] puzzle = { { 1, 2, 3 }, { 2, 0, 1 }, { 3, 1, 2 } };
 		LatinSquare ls = new LatinSquare(puzzle);
 		boolean bExpected = true;
 		boolean bActual = ls.ContainsZero();
-		
-		assertEquals(bExpected,bActual);
+
+		assertEquals(bExpected, bActual);
 	}
-}
 	
+	@Test
+	public void getColumn_Test() {
+
+	int[][] puzzle = { { 1, 2, 3 }, { 2, 0, 1 }, { 3, 1, 2 } };
+	LatinSquare ls = new LatinSquare(puzzle);
+	int [] Col = ls.getColumn(2);
+	int [] bExpected = {3, 1, 2};
+
+	}
+	@Test
+	public void getRow_Test() {
+
+	int[][] puzzle = { { 0, 4, 2 }, { 3, 0, 1 }, { 9, 5, 6 } };
+	LatinSquare ls = new LatinSquare(puzzle);
+	int [] Row = ls.getRow(2);
+	int [] bExpected = {2, 1, 6};
+
+	}
+	}
+
