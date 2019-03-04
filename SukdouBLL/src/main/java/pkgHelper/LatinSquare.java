@@ -17,17 +17,38 @@ public class LatinSquare
 		super();
 		this.LatinSquare = puzzle;
 	}
-
+	
+	/**
+	 * getter for LatinSquare
+	 */
+	
 	public int[][] getLatinSquare() 
 	{
 		return LatinSquare;
 	}
-
+	
+	/**
+	 * setter for LatinSquare
+	 */
+	
 	public void setLatinSquare(int[][] latinSquare)
 	{
 		LatinSquare = latinSquare;
 	}
-
+	
+	/**
+	 * Pass in a one dimensional array
+	 * if the a value exists more than once in the arr, return true
+	 * 
+	 * @param arr - array being checked
+	 * 
+	 * example:
+	 * 
+	 * if arr = 1,2,3,5,5, return true
+	 * if arr = 1,2,3,4,5, return false
+	 * @return
+	 */
+	
 	public boolean hasDuplicates(int[] arr)
 	{
 		boolean hasDuplicates = false;
@@ -46,6 +67,23 @@ public class LatinSquare
 		return hasDuplicates;
 
 	}
+	
+	
+	/**
+	 * Pass in a one dimensional array and an integer
+	 * if the iValue exists in the arr, return true
+	 * 
+	 * @param iValue - integer being checked
+	 * @param arr - array used to check
+	 * 
+	 * example:
+	 * 
+	 * if arr = 1,2,3,4,5 and iVALUE = 5, return true
+	 * if arr = 1,2,3,4,5 and iVALUE = 6, return false
+	 * @return
+	 */
+	
+	
 	public static boolean doesElementExist(int[] arr, int iValue)
 	{
 		//boolean doesElementExist = false;
@@ -108,11 +146,8 @@ public class LatinSquare
 		for (int i = 0; i < LatinSquare.length; i++) {
 
 		column_array[i] = LatinSquare[i][Col];
-
 		}
-
 		return column_array;
-
 		}
 
 		/**
