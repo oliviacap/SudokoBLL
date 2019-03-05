@@ -111,5 +111,19 @@ public class LatinSquareTest {
 	int [] bExpected = {2, 1, 6};
 
 	}
+	@Test
+	public void isLatinSquare_Test1()
+	{
+	int[][] puzzle = {{3,2,1},{1,3,2},{2,1,3}};
+	LatinSquare ls = new LatinSquare(puzzle);
+	boolean bExpected = true;
 	}
-
+	@Test
+	public void isLatinSquare_Test2()
+	{
+	int[][] puzzle = {{3,2,1},{2,3,4},{4,5,6}};
+	LatinSquare ls = new LatinSquare(puzzle);
+	boolean bExpected = false;
+	}
+	}
+	
